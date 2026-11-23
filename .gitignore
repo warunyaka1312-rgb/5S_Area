@@ -1,0 +1,16 @@
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json.bak
+database/*.db
+database/*.db-wal
+database/*.db-shm
+database/cache/
+database/export/
+
+# Environment config (มี password/secret)
+.env
+
+# Mail log (MAIL_DRIVER=log)
+database/logs/

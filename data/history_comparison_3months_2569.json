@@ -1,0 +1,658 @@
+[
+  {
+    "group": "880-1",
+    "unit": "1",
+    "jun": 82.816327,
+    "jul": 87.755102,
+    "aug": 84.5,
+    "target": 85.0
+  },
+  {
+    "group": "880-1",
+    "unit": "2",
+    "jun": 81.567242,
+    "jul": 86.0,
+    "aug": 86.0,
+    "target": 85.0
+  },
+  {
+    "group": "880-1",
+    "unit": "3",
+    "jun": 84.387755,
+    "jul": 86.842105,
+    "aug": 85.135135,
+    "target": 85.0
+  },
+  {
+    "group": "880-2",
+    "unit": "4",
+    "jun": 81.357143,
+    "jul": 85.714286,
+    "aug": 82.5,
+    "target": 85.0
+  },
+  {
+    "group": "880-2",
+    "unit": "5",
+    "jun": 83.534884,
+    "jul": 84.146341,
+    "aug": 84.459459,
+    "target": 85.0
+  },
+  {
+    "group": "880-2",
+    "unit": "6",
+    "jun": 82.534884,
+    "jul": 90.425532,
+    "aug": 87.765957,
+    "target": 85.0
+  },
+  {
+    "group": "ANO",
+    "unit": "7",
+    "jun": 88.0,
+    "jul": 98.0,
+    "aug": 89.0,
+    "target": 85.0
+  },
+  {
+    "group": "ANO",
+    "unit": "8",
+    "jun": 94.0,
+    "jul": 98.0,
+    "aug": 86.0,
+    "target": 85.0
+  },
+  {
+    "group": "ANO",
+    "unit": "9",
+    "jun": 87.0,
+    "jul": 96.0,
+    "aug": 85.0,
+    "target": 85.0
+  },
+  {
+    "group": "ANO",
+    "unit": "10",
+    "jun": 93.0,
+    "jul": 98.0,
+    "aug": 84.0,
+    "target": 85.0
+  },
+  {
+    "group": "ANO",
+    "unit": "11",
+    "jun": 88.0,
+    "jul": 96.0,
+    "aug": 96.0,
+    "target": 85.0
+  },
+  {
+    "group": "ANO",
+    "unit": "74",
+    "jun": 84.0,
+    "jul": 92.0,
+    "aug": 88.0,
+    "target": 87.0
+  },
+  {
+    "group": "PDC",
+    "unit": "12",
+    "jun": 88.0,
+    "jul": 91.0,
+    "aug": 91.0,
+    "target": 85.0
+  },
+  {
+    "group": "PDC",
+    "unit": "13",
+    "jun": 89.808511,
+    "jul": 90.0,
+    "aug": 90.0,
+    "target": 85.0
+  },
+  {
+    "group": "PDC",
+    "unit": "17",
+    "jun": 88.829787,
+    "jul": 88.0,
+    "aug": 88.0,
+    "target": 85.0
+  },
+  {
+    "group": "PDC 2",
+    "unit": "79",
+    "jun": 88.0,
+    "jul": 89.0,
+    "aug": 91.0,
+    "target": 85.0
+  },
+  {
+    "group": "PDC 2",
+    "unit": "80",
+    "jun": 87.489362,
+    "jul": 88.297872,
+    "aug": 88.0,
+    "target": 85.0
+  },
+  {
+    "group": "PDC 2",
+    "unit": "81",
+    "jun": 91.0,
+    "jul": 82.5,
+    "aug": 91.0,
+    "target": 85.0
+  },
+  {
+    "group": "PDC 2",
+    "unit": "16",
+    "jun": 87.0,
+    "jul": 88.0,
+    "aug": 88.0,
+    "target": 87.0
+  },
+  {
+    "group": "2400",
+    "unit": "19",
+    "jun": 93.0,
+    "jul": 89.0,
+    "aug": 85.0,
+    "target": 85.0
+  },
+  {
+    "group": "2400",
+    "unit": "20",
+    "jun": 90.0,
+    "jul": 85.0,
+    "aug": 85.0,
+    "target": 85.0
+  },
+  {
+    "group": "2400",
+    "unit": "21",
+    "jun": 91.0,
+    "jul": 85.0,
+    "aug": 83.0,
+    "target": 85.0
+  },
+  {
+    "group": "2000",
+    "unit": "22",
+    "jun": 93.5,
+    "jul": 90.0,
+    "aug": 89.0,
+    "target": 85.0
+  },
+  {
+    "group": "2000",
+    "unit": "23",
+    "jun": 93.5,
+    "jul": 91.0,
+    "aug": 79.0,
+    "target": 85.0
+  },
+  {
+    "group": "2000",
+    "unit": "24",
+    "jun": 93.5,
+    "jul": 91.0,
+    "aug": 86.486486,
+    "target": 85.0
+  },
+  {
+    "group": "2000",
+    "unit": "94",
+    "jun": 91.0,
+    "jul": 93.0,
+    "aug": 91.0,
+    "target": 85.0
+  },
+  {
+    "group": "Die PC",
+    "unit": "25",
+    "jun": 92.5,
+    "jul": 96.0,
+    "aug": 96.0,
+    "target": 85.0
+  },
+  {
+    "group": "Die PC",
+    "unit": "26",
+    "jun": 93.243243,
+    "jul": 87.0,
+    "aug": 87.0,
+    "target": 85.0
+  },
+  {
+    "group": "Die PC",
+    "unit": "27",
+    "jun": 89.0,
+    "jul": 92.0,
+    "aug": 92.0,
+    "target": 85.0
+  },
+  {
+    "group": "Die PC",
+    "unit": "28",
+    "jun": 92.0,
+    "jul": 91.0,
+    "aug": 91.0,
+    "target": 85.0
+  },
+  {
+    "group": "Die PC",
+    "unit": "82",
+    "jun": 89.0,
+    "jul": 94.0,
+    "aug": 94.0,
+    "target": 87.0
+  },
+  {
+    "group": "Die Design",
+    "unit": "29",
+    "jun": 89.0,
+    "jul": 92.0,
+    "aug": 88.0,
+    "target": 87.0
+  },
+  {
+    "group": "MNTE",
+    "unit": "30",
+    "jun": 91.891892,
+    "jul": 81.875,
+    "aug": 76.875,
+    "target": 85.0
+  },
+  {
+    "group": "MNTE",
+    "unit": "31",
+    "jun": 91.891892,
+    "jul": 82.291667,
+    "aug": 81.25,
+    "target": 85.0
+  },
+  {
+    "group": "MNTE",
+    "unit": "32",
+    "jun": 94.117647,
+    "jul": 86.486486,
+    "aug": 91.891892,
+    "target": 85.0
+  },
+  {
+    "group": "MNTE",
+    "unit": "33",
+    "jun": 94.0,
+    "jul": 84.5,
+    "aug": 83.0,
+    "target": 87.0
+  },
+  {
+    "group": "MNTE",
+    "unit": "83",
+    "jun": 97.5,
+    "jul": 90.625,
+    "aug": 90.0,
+    "target": 85.0
+  },
+  {
+    "group": "MNTE",
+    "unit": "84",
+    "jun": 88.235294,
+    "jul": 74.324324,
+    "aug": 85.135135,
+    "target": 85.0
+  },
+  {
+    "group": "Die Making",
+    "unit": "34",
+    "jun": 81.0,
+    "jul": 85.0,
+    "aug": 90.0,
+    "target": 85.0
+  },
+  {
+    "group": "Die Making",
+    "unit": "35",
+    "jun": 83.673469,
+    "jul": 86.397959,
+    "aug": 85.0,
+    "target": 85.0
+  },
+  {
+    "group": "PPT",
+    "unit": "36",
+    "jun": 89.0,
+    "jul": 84.0,
+    "aug": 74.468085,
+    "target": 85.0
+  },
+  {
+    "group": "PPT",
+    "unit": "37",
+    "jun": 94.0,
+    "jul": 81.25,
+    "aug": 78.0,
+    "target": 85.0
+  },
+  {
+    "group": "PPT",
+    "unit": "76",
+    "jun": 87.0,
+    "jul": 77.0,
+    "aug": 84.0,
+    "target": 87.0
+  },
+  {
+    "group": "WHL",
+    "unit": "39",
+    "jun": 93.0,
+    "jul": 89.393939,
+    "aug": 89.393939,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "40",
+    "jun": 88.0,
+    "jul": 88.0,
+    "aug": 86.0,
+    "target": 87.0
+  },
+  {
+    "group": "WHL",
+    "unit": "41",
+    "jun": 85.294118,
+    "jul": 86.764706,
+    "aug": 75.0,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "42",
+    "jun": 90.540541,
+    "jul": 89.393939,
+    "aug": 89.393939,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "73",
+    "jun": 85.714286,
+    "jul": 67.647059,
+    "aug": 85.0,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "43",
+    "jun": 96.0,
+    "jul": 67.647059,
+    "aug": 67.647059,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "61",
+    "jun": 93.0,
+    "jul": 89.0625,
+    "aug": 90.322581,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "45",
+    "jun": 86.25,
+    "jul": 88.333333,
+    "aug": 82.051282,
+    "target": 85.0
+  },
+  {
+    "group": "WHL",
+    "unit": "85",
+    "jun": 91.25,
+    "jul": 81.25,
+    "aug": 85.416667,
+    "target": 85.0
+  },
+  {
+    "group": "New Model",
+    "unit": "49",
+    "jun": 98.0,
+    "jul": 93.5,
+    "aug": 96.0,
+    "target": 85.0
+  },
+  {
+    "group": "QMS",
+    "unit": "48",
+    "jun": 88.0,
+    "jul": 88.0,
+    "aug": 93.0,
+    "target": 87.0
+  },
+  {
+    "group": "QMS",
+    "unit": "75",
+    "jun": 91.428571,
+    "jul": 96.571429,
+    "aug": 90.0,
+    "target": 85.0
+  },
+  {
+    "group": "QMS",
+    "unit": "92",
+    "jun": 94.0,
+    "jul": 98.0,
+    "aug": 94.0,
+    "target": 87.0
+  },
+  {
+    "group": "GA",
+    "unit": "50",
+    "jun": 92.0,
+    "jul": 94.0,
+    "aug": 91.0,
+    "target": 87.0
+  },
+  {
+    "group": "GA",
+    "unit": "51",
+    "jun": 90.0,
+    "jul": 87.931034,
+    "aug": 94.0,
+    "target": 87.0
+  },
+  {
+    "group": "GA",
+    "unit": "52",
+    "jun": 88.571429,
+    "jul": 89.655172,
+    "aug": 87.142857,
+    "target": 87.0
+  },
+  {
+    "group": "GA",
+    "unit": "53",
+    "jun": 93.333333,
+    "jul": 93.333333,
+    "aug": 84.615385,
+    "target": 87.0
+  },
+  {
+    "group": "GA",
+    "unit": "69",
+    "jun": 96.969697,
+    "jul": 85.416667,
+    "aug": 87.5,
+    "target": 85.0
+  },
+  {
+    "group": "GA",
+    "unit": "70",
+    "jun": 91.428571,
+    "jul": 91.428571,
+    "aug": 88.571429,
+    "target": 87.0
+  },
+  {
+    "group": "GA",
+    "unit": "71",
+    "jun": 90.0,
+    "jul": 90.0,
+    "aug": 87.209302,
+    "target": 87.0
+  },
+  {
+    "group": "HRD",
+    "unit": "55",
+    "jun": 97.0,
+    "jul": 94.0,
+    "aug": 98.0,
+    "target": 87.0
+  },
+  {
+    "group": "HRD",
+    "unit": "68",
+    "jun": 95.0,
+    "jul": 92.307692,
+    "aug": 103.846154,
+    "target": 87.0
+  },
+  {
+    "group": "HRD",
+    "unit": "77",
+    "jun": 97.560976,
+    "jul": 94.444444,
+    "aug": 98.0,
+    "target": 87.0
+  },
+  {
+    "group": "HRD",
+    "unit": "78",
+    "jun": 96.153846,
+    "jul": 92.307692,
+    "aug": 96.153846,
+    "target": 87.0
+  },
+  {
+    "group": "Planning",
+    "unit": "56",
+    "jun": 88.5,
+    "jul": 91.0,
+    "aug": 92.0,
+    "target": 87.0
+  },
+  {
+    "group": "ACC",
+    "unit": "57",
+    "jun": 95.5,
+    "jul": 90.0,
+    "aug": 94.0,
+    "target": 87.0
+  },
+  {
+    "group": "Finance",
+    "unit": "59",
+    "jun": 94.0,
+    "jul": 93.0,
+    "aug": 95.0,
+    "target": 87.0
+  },
+  {
+    "group": "Procurement",
+    "unit": "60",
+    "jun": 96.5,
+    "jul": 91.0,
+    "aug": 92.0,
+    "target": 87.0
+  },
+  {
+    "group": "Procurement",
+    "unit": "46",
+    "jun": 93.243243,
+    "jul": 91.891892,
+    "aug": 87.837838,
+    "target": 85.0
+  },
+  {
+    "group": "Procurement",
+    "unit": "47",
+    "jun": 90.540541,
+    "jul": 83.783784,
+    "aug": 85.135135,
+    "target": 85.0
+  },
+  {
+    "group": "AO/AE",
+    "unit": "62",
+    "jun": 93.5,
+    "jul": 90.0,
+    "aug": 90.0,
+    "target": 87.0
+  },
+  {
+    "group": "CX",
+    "unit": "64",
+    "jun": 95.0,
+    "jul": 95.0,
+    "aug": 92.0,
+    "target": 87.0
+  },
+  {
+    "group": "HUB",
+    "unit": "65",
+    "jun": 91.0,
+    "jul": 85.0,
+    "aug": 77.0,
+    "target": 87.0
+  },
+  {
+    "group": "IT",
+    "unit": "66",
+    "jun": 97.5,
+    "jul": 96.0,
+    "aug": 96.0,
+    "target": 87.0
+  },
+  {
+    "group": "office MIS",
+    "unit": "67",
+    "jun": 91.0,
+    "jul": 89.5,
+    "aug": 88.0,
+    "target": 87.0
+  },
+  {
+    "group": "office MIS",
+    "unit": "58",
+    "jun": 0.0,
+    "jul": 0.0,
+    "aug": 0.0,
+    "target": 87.0
+  },
+  {
+    "group": "R&D",
+    "unit": "86",
+    "jun": 93.714286,
+    "jul": 91.428571,
+    "aug": 94.0,
+    "target": 87.0
+  },
+  {
+    "group": "R&D",
+    "unit": "88",
+    "jun": 94.444444,
+    "jul": 94.444444,
+    "aug": 93.0,
+    "target": 85.0
+  },
+  {
+    "group": "PPT 2",
+    "unit": "87",
+    "jun": 87.4,
+    "jul": 85.0,
+    "aug": 82.0,
+    "target": 85.0
+  }
+]

@@ -1,0 +1,1 @@
+<?php require_once 'config.php'; header('Content-Type: application/json; charset=utf-8'); $kind=$_GET['kind']??'production'; $table=$kind==='office'?'office_criteria':'criteria'; $rows=db()->query("SELECT id,item_no,max_score,description FROM $table WHERE active=1 ORDER BY item_no")->fetchAll(); echo json_encode($rows,JSON_UNESCAPED_UNICODE);

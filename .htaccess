@@ -1,0 +1,62 @@
+# ห้ามเปิดไฟล์ตั้งค่า .env / .env.example จากเว็บ (มีรหัสผ่านฐานข้อมูล)
+<FilesMatch "^\.env">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# V80: ลิงก์/บุ๊กมาร์กเดิม (ไฟล์เคยอยู่ที่ root) -> ย้ายไปโฟลเดอร์ใหม่อัตโนมัติ
+<IfModule mod_alias.c>
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/areas\.php$ $1/Page/admin/areas.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/auditor_12month\.php$ $1/Page/public/auditor_12month.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/backup\.php$ $1/Page/admin/backup.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/board_title\.php$ $1/Page/public/board_title.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/calibrate\.php$ $1/Page/admin/calibrate.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/completion_summary\.php$ $1/Page/public/completion_summary.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/criteria\.php$ $1/Page/admin/criteria.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/department_list\.php$ $1/Page/auditor/department_list.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/export\.php$ $1/Page/admin/export.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/graph_overview\.php$ $1/Page/public/graph_overview.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/graph_print\.php$ $1/Page/public/graph_print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/history\.php$ $1/Page/auditor/history.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/history_date_save\.php$ $1/Page/auditor/history_date_save.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/import\.php$ $1/Page/auditor/import.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/import_criteria\.php$ $1/Page/auditor/import_criteria.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/import_save\.php$ $1/Page/auditor/import_save.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/inspection_form\.php$ $1/Page/public/inspection_form.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/inspection_form_print\.php$ $1/Page/public/inspection_form_print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/legacy\.php$ $1/Page/public/legacy.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/master_data\.php$ $1/Page/admin/master_data.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/office_criteria\.php$ $1/Page/admin/office_criteria.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/office_reports\.php$ $1/Page/public/office_reports.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/office_score\.php$ $1/Page/auditor/office_score.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/org_3month_board_template\.php$ $1/Page/public/org_3month_board_template.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/org_3month_summary\.php$ $1/Page/public/org_3month_summary.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/period_report\.php$ $1/Page/public/period_report.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/print\.php$ $1/Page/public/print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/print_office\.php$ $1/Page/public/print_office.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/production_criteria\.php$ $1/Page/admin/production_criteria.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/production_score\.php$ $1/Page/auditor/production_score.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/reports\.php$ $1/Page/public/reports.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/schedule_manage\.php$ $1/Page/admin/schedule_manage.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/schedule_print\.php$ $1/Page/public/schedule_print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/schedule_signoff\.php$ $1/Page/public/schedule_signoff.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/score\.php$ $1/Page/auditor/score.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/settings\.php$ $1/Page/admin/settings.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/setup_check\.php$ $1/Page/admin/setup_check.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/tag_blank_form_print\.php$ $1/Page/public/tag_blank_form_print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/tag_dashboard\.php$ $1/Page/public/tag_dashboard.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/tag_form_print\.php$ $1/Page/public/tag_form_print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/tag_manage\.php$ $1/Page/auditor/tag_manage.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/tag_print\.php$ $1/Page/public/tag_print.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/unit_import_save\.php$ $1/Page/auditor/unit_import_save.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/unit_scores\.php$ $1/Page/public/unit_scores.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/verify\.php$ $1/Page/admin/verify.php
+RedirectMatch 302 ^(.*?)(?<!/admin|/public|/auditor)/config\.php$ $1/index.php
+# Page folder: old URLs admin/ auditor/ public/ -> Page/admin/ Page/auditor/ Page/public/
+RedirectMatch 302 ^(.*?)(?<!/Page)/(admin|auditor|public)/([A-Za-z0-9_]+\.php)$ $1/Page/$2/$3
+</IfModule>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120">
+  <defs>
+    <linearGradient id="o" x1="0" x2="1"><stop stop-color="#ff7a00"/><stop offset="1" stop-color="#ff3d00"/></linearGradient>
+  </defs>
+  <g transform="translate(8 8)">
+    <circle cx="52" cy="52" r="42" fill="#111827"/>
+    <path d="M24 68h56M30 64V43h12v21M48 64V31h12v33M66 64V20h12v44" stroke="white" stroke-width="6" fill="none"/>
+    <path d="M22 38c14-14 30-17 53-9" stroke="url(#o)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M69 23l14 5-9 11" fill="url(#o)"/>
+  </g>
+  <text x="112" y="58" font-family="Arial, sans-serif" font-size="50" font-weight="900" fill="#111827">5</text>
+  <text x="148" y="58" font-family="Arial, sans-serif" font-size="50" font-weight="900" fill="#f4511e">S</text>
+  <text x="114" y="93" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#111827">SMART</text>
+</svg>

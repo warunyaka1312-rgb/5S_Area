@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-01T02:01:01.907828",
+  "integrity_check": "ok",
+  "source": "db/database.sqlite",
+  "counts": {
+    "criteria": 35,
+    "areas": 83,
+    "scores": 315,
+    "legacy_scores": 1524,
+    "excel_monthly": 81,
+    "office_criteria": 21,
+    "office_scores": 189,
+    "tags": 0,
+    "tag_monthly_summary": 189,
+    "audit_plans": 51,
+    "app_settings": 5,
+    "unit_import_audits": 0,
+    "unit_import_units": 0,
+    "unit_import_scores": 0,
+    "audits": 18,
+    "departments": 28,
+    "monthly_scan_documents": 0,
+    "auditor_monthly_history": 28,
+    "auditor_monthly_history_unified": 28,
+    "auditor_12month_rounds": 104,
+    "auditor_12month_migrated": 1
+  }
+}

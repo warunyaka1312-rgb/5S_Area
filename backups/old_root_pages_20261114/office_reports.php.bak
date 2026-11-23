@@ -1,0 +1,62 @@
+<?php
+require_once 'config.php';
+$title='กราฟ / Ranking Office';
+$p=db();
+$year=(int)($_GET['year']??date('Y'));
+$target=target_pct('Office');
+$rows=[];
+$areas=$p->query("SELECT id,area_name,group_name,unit_no FROM areas WHERE active=1 AND department='Office' ORDER BY CAST(unit_no AS INTEGER),group_name")->fetchAll();
+foreach($areas as $a){
+  $q=$p->prepare("SELECT au.id audit_id,s.score1,s.score2,s.score3,c.max_score
+                  FROM audits au JOIN office_scores s ON s.audit_id=au.id
+                  JOIN office_criteria c ON c.id=s.criterion_id
+                  WHERE au.area_id=? AND au.department='Office' AND strftime('%Y',au.audit_date)=?");
+  $q->execute([$a['id'],sprintf('%04d',$year)]);
+  $sum=0;$max=0;$auditIds=[];
+  foreach($q as $r){
+    $v=score_avg($r['score1'],$r['score2'],$r['score3']);
+    if($v===null) continue;
+    $sum+=(float)$v; $max+=(float)$r['max_score']; $auditIds[(int)$r['audit_id']]=1;
+  }
+  if($max>0) $rows[]=['name'=>$a['group_name'].' / หน่วย '.$a['unit_no'],'pct'=>round($sum/$max*100,2),'audits'=>count($auditIds)];
+}
+usort($rows,fn($a,$b)=>$b['pct']<=>$a['pct']);
+$cat=[];
+/* Office criteria ในฐานข้อมูลรุ่นนี้ไม่มีคอลัมน์ category
+   จึงสรุปกราฟด้านขวาเป็นคะแนนรายข้อแทน เพื่อไม่ให้รายงานล่ม */
+$q=$p->prepare("SELECT cr.item_no, s.score1,s.score2,s.score3,cr.max_score
+                FROM audits au
+                JOIN office_scores s ON s.audit_id=au.id
+                JOIN office_criteria cr ON cr.id=s.criterion_id
+                WHERE au.department='Office' AND strftime('%Y',au.audit_date)=?
+                ORDER BY cr.item_no");
+$q->execute([sprintf('%04d',$year)]);
+$byItem=[];
+foreach($q as $r){
+  $v=score_avg($r['score1'],$r['score2'],$r['score3']);
+  if($v===null) continue;
+  $k=(int)$r['item_no'];
+  if(!isset($byItem[$k])) $byItem[$k]=['sum'=>0.0,'max'=>0.0];
+  $byItem[$k]['sum']+=(float)$v;
+  $byItem[$k]['max']+=(float)$r['max_score'];
+}
+foreach($byItem as $item=>$v){
+  $cat[]=['cat'=>'ข้อ '.$item,'pct'=>$v['max']>0?round($v['sum']/$v['max']*100,2):0];
+}
+require 'includes/header.php';
+?>
+<div class="hero"><div class="hero-copy"><h1>กราฟ / <span>Ranking Office</span></h1><p>คะแนน Office จากข้อมูลที่บันทึกจริง • N/A ไม่ถูกนำมาคิด</p></div><div class="hero-right"><strong><?=number_format($target,1)?>%</strong><small>เป้าหมาย Office</small></div></div>
+<div class="card p-5 mb-5 no-print"><form class="flex flex-wrap gap-3 items-end"><div><label class="text-xs font-bold">ปี</label><input name="year" type="number" value="<?=$year?>" class="border rounded-xl p-3 w-32"></div><button class="bg-blue-600 text-white rounded-xl px-5 py-3 font-bold">🔎 แสดงข้อมูล</button><button type="button" onclick="window.print()" class="border rounded-xl px-5 py-3 font-bold">🖨 พิมพ์ Office A4 / PDF</button><button type="button" onclick="copyChart()" class="border rounded-xl px-5 py-3 font-bold">📋 คัดลอกรูป Office</button><button type="button" onclick="downloadChart()" class="border rounded-xl px-5 py-3 font-bold">⬇ PNG Office</button></form></div>
+<div class="grid xl:grid-cols-2 gap-5">
+ <div class="card p-5"><h2 class="font-bold mb-3">🏢 คะแนนรายพื้นที่ Office <?=$year?></h2><div style="height:420px;position:relative"><canvas id="rank"></canvas></div></div>
+ <div class="card p-5"><h2 class="font-bold mb-3">📊 คะแนนรายข้อ Office <?=$year?></h2><div style="height:420px;position:relative"><canvas id="cat"></canvas></div></div>
+</div>
+<div class="card p-5 mt-5"><h2 class="font-bold text-lg mb-3">ตารางสรุป Office — เป้าหมาย <?=number_format($target,1)?>%</h2><div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr class="bg-slate-100"><th class="p-3 border">อันดับ</th><th class="p-3 border text-left">พื้นที่</th><th class="p-3 border">ครั้งตรวจ</th><th class="p-3 border">คะแนน %</th><th class="p-3 border">สถานะ</th></tr></thead><tbody><?php foreach($rows as $i=>$r):?><tr><td class="p-3 border text-center"><?=$i+1?></td><td class="p-3 border"><?=h($r['name'])?></td><td class="p-3 border text-center"><?=$r['audits']?></td><td class="p-3 border text-center font-bold"><?=number_format($r['pct'],2)?>%</td><td class="p-3 border text-center"><?=h(status_text((float)$r['pct'],'Office'))?></td></tr><?php endforeach; if(!$rows):?><tr><td colspan="5" class="p-6 text-center text-slate-500">ยังไม่มีคะแนน Office ในปี <?=$year?></td></tr><?php endif;?></tbody></table></div></div>
+<script>
+const ROWS=<?=json_encode($rows,JSON_UNESCAPED_UNICODE)?>, CAT=<?=json_encode($cat,JSON_UNESCAPED_UNICODE)?>, TARGET=<?=json_encode($target)?>;
+const rankChart=new Chart(document.getElementById('rank'),{type:'bar',data:{labels:ROWS.map(x=>x.name),datasets:[{label:'คะแนนเฉลี่ย %',data:ROWS.map(x=>Number(x.pct)),borderRadius:6},{label:'เป้าหมาย '+TARGET+'%',type:'line',data:ROWS.map(()=>TARGET),borderColor:'#ef4444',borderDash:[6,4],pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',scales:{x:{min:0,max:100,ticks:{callback:v=>v+'%'}},y:{ticks:{font:{size:10}}}},plugins:{legend:{position:'top'}}}});
+new Chart(document.getElementById('cat'),{type:'bar',data:{labels:CAT.map(x=>x.cat),datasets:[{label:'คะแนน %',data:CAT.map(x=>Number(x.pct)),borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}},plugins:{legend:{display:false}}}});
+function downloadChart(){const a=document.createElement('a');a.href=rankChart.toBase64Image('image/png',1);a.download='5S_Office_Ranking_<?=$year?>.png';a.click();}
+async function copyChart(){try{const blob=await new Promise(r=>rankChart.canvas.toBlob(r,'image/png'));await navigator.clipboard.write([new ClipboardItem({'image/png':blob})]);alert('คัดลอกรูป Office แล้ว สามารถ Ctrl+V ใน LINE ได้');}catch(e){downloadChart();alert('คัดลอกโดยตรงไม่ได้ ระบบดาวน์โหลด PNG Office ให้แทนครับ');}}
+</script>
+<?php require 'includes/footer.php';?>
